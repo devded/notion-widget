@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retrieve Multiple Query Parameter Values</title>
+  </head>
+  <body>
+    <script>
+      // Get the values of multiple query parameters
+      function getQueryParameterValues() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var parameterValues = {};
+        urlParams.forEach(function (value, key) {
+          parameterValues[key] = value;
+        });
+        return parameterValues;
+      }
+
+      // Example usage
+      var parameterValues = getQueryParameterValues();
+      console.log("Query parameter values:", parameterValues);
+      console.log(JSON.parse(parameterValues['data']))
+
+    </script>
+  </body>
+</html>
