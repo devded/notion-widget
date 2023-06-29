@@ -24,7 +24,7 @@
       // Example usage
       var parameterValues = getQueryParameterValues();
       console.log("Query parameter values:", parameterValues);
-      console.log(JSON.parse(parameterValues['graphData']))
+      console.log(JSON.parse(parameterValues["graphData"]));
 
       // var graphData = [
       //   {
@@ -43,8 +43,7 @@
       //     deposite: 31000,
       //   },
       // ];
-      var graphData = JSON.parse(parameterValues['graphData'])
-
+      var graphData = JSON.parse(parameterValues["graphData"]);
 
       var xAxisData = [];
       var depositeData = [];
@@ -61,9 +60,6 @@
       console.log("withdrawData:", withdrawData);
 
       var chartOptions = {
-        title: {
-          text: "Stacked Line",
-        },
         tooltip: {
           trigger: "axis",
         },
@@ -76,11 +72,11 @@
           bottom: "3%",
           containLabel: true,
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {},
+        //   },
+        // },
         xAxis: {
           type: "category",
           boundaryGap: false,
