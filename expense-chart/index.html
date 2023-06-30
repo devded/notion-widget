@@ -1,118 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>ECharts Monthly Expense and Deposit Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECharts</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
     <style>
-     body {
-  background-color: #F9F5F6;
-}
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #main {
+        width: 450px;
+        height: 350px;
+      }
+      body {
+        background-color: #f9f5f6;
+      }
     </style>
   </head>
   <body>
-    <div id="chartContainer" style="width: 500px; height: 400px"></div>
-
-    <script>
-      // Generate the chart using ECharts
-      var chartContainer = document.getElementById("chartContainer");
-      var chart = echarts.init(chartContainer);
-      function getQueryParameterValues() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var parameterValues = {};
-        urlParams.forEach(function (value, key) {
-          parameterValues[key] = value;
-        });
-        return parameterValues;
-      }
-
-      // Example usage
-      var parameterValues = getQueryParameterValues();
-      console.log("Query parameter values:", parameterValues);
-      console.log(JSON.parse(parameterValues["graphData"]));
-
-      // var graphData = [
-      //   {
-      //     month: "Jan",
-      //     withdraw: 2000,
-      //     deposite: 3000,
-      //   },
-      //   {
-      //     month: "Feb",
-      //     withdraw: 2000,
-      //     deposite: 3000,
-      //   },
-      //   {
-      //     month: "March",
-      //     withdraw: 21000,
-      //     deposite: 31000,
-      //   },
-      // ];
-      var graphData = JSON.parse(parameterValues["graphData"]);
-
-      var xAxisData = [];
-      var depositeData = [];
-      var withdrawData = [];
-
-      graphData.forEach(function (data) {
-        xAxisData.push(data.month);
-        depositeData.push(data.deposite);
-        withdrawData.push(data.withdraw);
-      });
-
-      console.log("xAxisData:", xAxisData);
-      console.log("depositeData:", depositeData);
-      console.log("withdrawData:", withdrawData);
-
-      var chartOptions = {
-        tooltip: {
-          trigger: "axis",
-        },
-        legend: {
-          data: ["Deposite", "Withdraw"],
-        },
-        grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
-          containLabel: true,
-        },
-        // toolbox: {
-        //   feature: {
-        //     saveAsImage: {},
-        //   },
-        // },
-        xAxis: {
-          type: "category",
-          boundaryGap: false,
-          data: xAxisData,
-        },
-        yAxis: {
-          type: "value",
-        },
-        series: [
-          {
-            name: "Deposite",
-            type: "line",
-            // stack: "Total",
-            data: depositeData,
-            smooth: true,
-            // areaStyle: {}
-          },
-          {
-            name: "Withdraw",
-            type: "line",
-            // stack: "Total",
-            data: withdrawData,
-            smooth: true,
-            // areaStyle: {}
-          },
-        ],
-      };
-
-      // Set the chart options and render the chart
-      chart.setOption(chartOptions);
-    </script>
+    <div id="main"></div>
+    <script type="text/javascript"></script>
+    <script src="main.js"></script>
   </body>
 </html>
