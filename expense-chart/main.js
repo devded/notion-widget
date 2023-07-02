@@ -30,6 +30,7 @@ var option = {
     feature: {
       magicType: { show: true, type: ["line", "bar"] },
     },
+    showTitle: false,
   },
   tooltip: {
     trigger: "axis",
