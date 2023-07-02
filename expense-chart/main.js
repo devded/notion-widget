@@ -25,6 +25,12 @@ graphData.forEach(function (data) {
 });
 
 var option = {
+  toolbox: {
+    show: true,
+    feature: {
+      magicType: { show: true, type: ["line", "bar"] },
+    },
+  },
   tooltip: {
     trigger: "axis",
   },
